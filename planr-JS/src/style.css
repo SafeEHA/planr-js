@@ -1,0 +1,193 @@
+:root {
+    background-color: rgb(250, 250, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.b:hover, .b:visited, .b:link, .b:active
+{
+    text-decoration: none;
+    color:black;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    
+}
+
+#content {
+    background-color: whitesmoke;
+    width: 99vw;
+    height: 85vh;
+    margin-left: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header:last-of-type {
+    margin-left: auto;
+}
+
+.grey {
+    background-color: grey;
+    height: 30px;
+    width: 120px;
+    border-radius: 5px;
+    float: right;
+    margin-left: auto;
+    border-color: rgb(124, 124, 128);
+    margin-top: 50vh;
+
+}
+
+.blue {
+    margin-top: 50vh;
+    height: 30px;
+    width: 120px;
+    border-radius: 5px;
+    float: right;
+    margin-left: auto;
+    margin-top: 50vh;
+    background-color: blue;
+    border-color: blue;
+    color: white;
+    margin-right: 2vw;
+}
+
+#btn {
+    background-color: blue;
+    height: 30px;
+    width: 120px;
+    color: white;
+    border-color: blue;
+    border-radius: 5px;
+    float: right;
+    margin-left: auto;
+    margin-top: 16px;
+}
+
+
+.content {
+    display: flex;
+    float: right;
+    padding-top: 35vh;
+    padding-right: 10vw;
+}
+
+p {
+    padding-left: 1vw;
+}
+
+h2 {
+    margin-left: 180px;
+}
+
+/*page 2*/
+table,
+th,
+td {
+    width: 70%;
+    background-color: white;
+    border-bottom: 1px solid rgb(219, 216, 216);
+    border-radius: 3px;
+    padding: 12px 12px;
+}
+
+.items {
+    padding-top: 3vh;
+    padding-right: 60%;
+    padding-left: 20%;
+
+}
+
+.field {
+    margin: 40px;
+    margin-left: 5px;
+}
+
+.input {
+    width: 20vw;
+    height: 5vh;
+    border: 1px solid rgb(216, 209, 209);
+    border-radius: 5px;
+}
+
+select:invalid {
+    color: gray;
+}
+
+.start {
+    float: left;
+    width: 50%;
+}
+
+.end {
+    display: flex;
+    width: 50%;
+}
+
+
+label {
+    display: block;
+    margin-left: 5vw;
+}
+
+#form {
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+#location {
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+
+}
+
+#tabs section {
+    display: none;
+}
+
+#tabs section:target {
+    display: flex;
+}
+#strategy{
+    display: flex;
+}
+hr {
+    border-right : 0;
+    border-left: 0;
+}
+.hr {
+    border: 1px solid grey;
+    height: 10px;
+}
+.title {
+    line-height:20px;
+    padding-top: 5px;
+    display: inline-flex;
+
+}
+.vr {
+   
+        display: inline-block;
+        border-left: 1px solid #ccc;
+        margin: 5 10px;
+        margin-left: 30px;
+        padding-left: 30px;
+        height: 150px
+}
+#vrule {
+    display: inline-block;
+        border-left: 1px solid #ccc;
+        margin: 10 30px;
+        margin-right: 120px;
+        padding-left: 150px;
+        height:50px
+}
+.align {
+    display: table-header-group;
+}
+
