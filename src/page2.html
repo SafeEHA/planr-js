@@ -67,6 +67,101 @@
 
         </div>
     </div>
+
+    <div id="wrapper">
+        <h1>Add/Edit campaign</h1>
+        <hr>
+        <form>
+            <div id="form">
+                <div class="name">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Campaign Name">
+                </div>
+                <div id="vrule" class="type">
+                    <label class="align" for="type">Campaign Type</label>
+                    <select required>
+                        <option value="" disabled selected hidden>Campaign Type</option>
+                        <option value="RI">Routine Immunization</option>
+                        <option value="Covid">Covid</option>
+                    </select>
+                </div>
+                <div id="vrule" class="duration">
+                    <label for="duration">Duration</label>
+
+                    <input type="date" placeholder="Start Date">
+
+                    <input type="date" placeholder="End Date">
+                </div>
+            </div>
+
+          
+
+        </form>
+
+
+        <div id="tabs">
+            <a href="#tab1" class="b">Location</a>
+            <a href="#tab2" class="b">Strategy</a>
+            <hr>
+
+            <section id="tab1">
+                
+                <div>
+                    <label class="title" for="type">STATE</label>
+                    <select required>
+                        <option value="" disabled selected hidden>State</option>
+                        <option value="RI">Borno</option>
+                        <option value="Covid">Yobe</option>
+                        <option value="Covid">Kano</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="title" for="type">LGA</label>
+                    <select required>
+                        <option value="" disabled selected hidden>LGA</option>
+                        <option value="RI">MMC</option>
+                        <option value="Covid">Bama</option>
+                        <option value="Covid">Ungogo</option>
+                        <option value="Covid">Fagge</option>
+                        <option value="Covid">Dapchi</option>
+                        <option value="Covid">Chibok</option>
+                        <option value="Covid">Dapchi</option>
+                        <option value="Covid">Damasak</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="title"for="type">WARD</label>
+                    <select required>
+                        <option value="" disabled selected hidden>Ward</option>
+                        <option value="RI">Ward 1</option>
+                        <option value="Covid">Ward 2</option>
+                    </select>
+                </div>
+            </section>
+            <section id="tab2">
+                <div id="strategy">
+                    <div>
+                        <h4><input class="radio" type="radio">Use Fixed Post</h4>
+                        <p>select this strategy for field work<br> conducted within 2km of a Health<br> Facility (HF).</p>
+                    </div>
+                    <div class="vr">
+                        <h4><input class="radio" type="radio">Use Outreach Session</h4>
+                        <p>Select this strategy for field work<br>
+                            conducted 2 - 6km from a Health<br>
+                            Facility.</p>
+                    </div>
+                    <div class="vr">
+                        <h4><input class="radio" type="radio">Use Mobile Session</h4>
+                        <p>Select this strategy for field work<br>
+                            conducted 6km+ from a Health<br>
+                            Facility.</p>
+                    </div>
+                </div>
+                <button class="grey" onclick="location.href='index.html'">Cancel</button>
+                <button class="blue" onclick="location.href='page2.html'">Save</button>
+            </section>
+           
+        </div>
     <script src="script.js"></script>
 
 </body>
