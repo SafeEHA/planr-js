@@ -1,33 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planr-JS</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <style type="text/css">
+      .nav-tabs .nav-item.show .nav-link,
+      .nav-tabs .nav-link.active {
+        border-top: #ffffff;
+        border-right: #ffffff;
+        border-left: #ffffff;
+        border-bottom: 3px solid #709bed;
+      }
+    </style>
+  </head>
 
-    <div id="container">
-        <header>
-            <h2> Manage Campaign</h2>
-            <button id="btn" onclick="location.href='page3.html'">Add Campaign</button>
-        </header>
-        <div id="content">
-            <div class="content">
-
-                <img src="https://st2.depositphotos.com/2914313/7762/v/950/depositphotos_77620559-stock-illustration-opened-book-with-writing-pen.jpg"
-                    alt="An image of a journal and pen" height="100">
-                <p>
-                    No campaigns found. <a href="page3.html">Add Campaign</a> to begin recording<br>
-                    and managing campaigns.
-                </p>
-            </div>
+  <body>
+    <!-- first section-->
+    <div class="">
+      <div class="row">
+        <div class="col-6  text-center">
+          <h2 class="header">Manage campaigns</h2>
         </div>
-    </div>
-</body>
+        <div class="col-6 ">
+          <button
+            type="button"
+            style="float: right"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Add Campaign
+          </button>
+        </div>
+      </div>
+      <div class="container-sm">
+        <div class="row" style="background-color: #f5f6fa; height: 100vh"  id="emptydata">
+          <!-- Empty -->
+          <div
+            class="col-8 offset-3 d-flex flex-row justify-content-center align-items-center"
+           
+          >
+            <div class="row no-gutters">
+              <!-- <div class="col-md-6">
+                            <img src="img/book-pen.png" class="img-thumbnail" style="height: 130px; width: 130px; border:0; background-color: #f5f6fa;" /> 
+                        </div> -->
+              <div class="col-12 align-text-bottom">
+                <p>
+                  <img
+                    src="img/book-pen.png"
+                    class="img-thumbnail rounded float-left"
+                    style="
+                      height: 130px;
+                      width: 130px;
+                      border: 0;
+                      background-color: #f5f6fa;
+                    "
+                  />
 
+                  No campaigns found.
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    >Add Campaign</a
+                  >
+                  to begin recording and managing campaigns.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="background-color: #f5f6fa; height: 100vh">
+          <!-- list -->
+          <div class="col-8 offset-3" id="data_available" style="padding-top: 70px;">
+            <div class="input-group">
+              <div class="form-outline">
+                <input
+                  type="search"
+                  placeholder="Search"
+                  class="form-control"
+                />
+                <a href="" oncli></a>
+              </div>
+            </div>
+            <form>
+            <div class="row">
+              <div class="col-12">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">CAMPAIGN NAME</th>
+                      <th scope="col">TYPE</th>
+                      <th scope="col">STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody id="info"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+      integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Start Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Campaign</h5>
+          </div>
+          <div class="modal-body">
+            <form class="form">
+              <!--first row begin-->
+              <div class="row">
+                <div class="col-md-3">
+                  <label class="label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Campaign Name"
+                    id="cname"
+                    required
+                  />
+                </div>
+                <div class="col-md-3">
+                  <label class="label">Type</label>
+                  <select class="form-control" id="ctype">
+                    <option value="" disabled selected hidden>
+                      Campaign Type
+                    </option>
+                    <option value="Routine Immunization">
+                      Routine Immunization
+                    </option>
+                    <option value="Covid">Covid</option>
+                    <option value="Polio">Polio</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="label">Duration</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="Start Date"
+                    id="cduration_start_date"
+                  />
+                </div>
+                <div class="col-md-3">
+                  <label class="label"></label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="End Date"
+                    id="cduration_end_date"
+                  />
+                </div>
+              </div>
+              <!--first row ends-->
+
+              <!--second row begin-->
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#home"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                    >Location</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    
+                    data-toggle="tab"
+                    href="#profile"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                    >Strategy</a
+                  >
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane container fade show active"
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
+                >
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label>State</label>
+                      <select class="form-control" id="cstate">
+                        <option value="" disabled selected hidden>State</option>
+                        <option value="ABUJA FCT">ABUJA FCT</option>
+                        <option value="ABIA">ABIA</option>
+                        <option value="ADAMAWA">ADAMAWA</option>
+                        <option value=">AKWA IBOM">AKWA IBOM</option>
+                        <option value="ANAMBRA">ANAMBRA</option>
+                        <option value="BAUCHI">BAUCHI</option>
+                        <option value="BAYELSA">BAYELSA</option>
+                        <option value="BENUE">BENUE</option>
+                        <option value="BORNO">BORNO</option>
+                        <option value="CROSS RIVER">CROSS RIVER</option>
+                        <option value="DELTA">DELTA</option>
+                        <option value="EBONYI">EBONYI</option>
+                        <option value="EDO">EDO</option>
+                        <option value="EKITI">EKITI</option>
+                        <option value="ENUGU">ENUGU</option>
+                        <option value="GOMBE">GOMBE</option>
+                        <option value="IMO">IMO</option>
+                        <option value="JIGAWA">JIGAWA</option>
+                        <option value="KADUNA">KADUNA"></option>
+                        <option value="KANO">KANO</option>
+                        <option value="KATSINA">KATSINA</option>
+                        <option value="KEBBI">KEBBI</option>
+                        <option value="KOGI">KOGI</option>
+                        <option value="KWARA">KWARA</option>
+                        <option value="LAGOS">LAGOS</option>
+                        <option value="NASSARAWA">NASSARAWA</option>
+                        <option value="NIGER">NIGER</option>
+                        <option value="OGUN">OGUN</option>
+                        <option value="ONDO">ONDO</option>
+                        <option value="OSUN">OSUN</option>
+                        <option value="OYO">OYO</option>
+                        <option value="PLATEAU">PLATEAU</option>
+                        <option value="RIVERS">RIVERS</option>
+                        <option value="SOKOTO">SOKOTO</option>
+                        <option value="TARABA">TARABA</option>
+                        <option value="YOBE">YOBE</option>
+                        <option value="ZAMFARA">ZAMFARA</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label>LGA</label>
+                      <select class="form-control" id="clga">
+                        <option value="" disabled selected hidden>LGA</option>
+                        <option value="RI">MMC</option>
+                        <option value="Bama">Bama</option>
+                        <option value="Ungogo">Ungogo</option>
+                        <option value="Fagge">Fagge</option>
+                        <option value="Dapchi">Dapchi</option>
+                        <option value="Chibok">Chibok</option>
+                        <option value="Dapchi">Dapchi</option>
+                        <option value="Damasak">Damasak</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label>Ward</label>
+                      <select class="form-control" id="cward" required>
+                        <option value="" disabled selected hidden>Ward</option>
+                        <option value="Ward 1">Ward 1</option>
+                        <option value="Ward 2">Ward 2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane container fade"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input value="Use Fixed Post"id= "cstrategy"
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label class="form-check-label"  for="flexRadioDefault1">
+                        <b>Use Fixed Post</b>
+                        <p>
+                          select this strategy for field work<br />
+                          conducted within 2km of a Health<br />
+                          Facility (HF).
+                        </p>
+                      </label>
+                    </div>
+                    <div class="col-md-4">
+                      <input value="Use Outreach Session" id= "cstrategy"
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        <b>Use Outreach Session</b>
+                        <p>
+                          Select this strategy for field work<br />
+                          conducted 2 - 6km from a Health<br />
+                          Facility.
+                        </p>
+                      </label>
+                    </div>
+                    <div class="col-md-4">
+                      <input value="Use Mobile Session" id= "cstrategy"
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                      />
+                      <label class="form-check-label"  for="flexRadioDefault1">
+                        <b>Use Mobile Session</b>
+                        <p>
+                          Select this strategy for field work<br />
+                          conducted 6km+ from a Health<br />
+                          Facility.
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="btn btn-secondary"
+              id="btnclose"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              onclick="savedata()"
+              data-bs-dismiss="modal"
+            >
+              Save
+            </button>
+          </div>
+          <!-- End modal -->
+        </div>
+      </form>
+      </div>
+    </div>
+  </body>
 </html>
